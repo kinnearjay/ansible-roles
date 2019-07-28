@@ -18,7 +18,11 @@
   - name: Ensure packages are installed
     pip:
       name: "{{ packages }}"
-    with_items: "{{ pippackages }}"
-        
+    vars:
+      packages:
+      - boto
+      - boto3
+      - docker-compose
+      
 
     

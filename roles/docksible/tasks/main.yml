@@ -1,0 +1,22 @@
+---
+# tasks file for docksible
+  - name: install packages for docker
+    package:
+      name: "{{ item }}"
+      state: latest
+      update_cache: yes
+    with_items: "{{ packages }}"
+  - name: Add additional repos
+    shell: yum-config-manager --enable extras
+  
+  - name: make sure docker runs on startup
+    service: 
+      with_items: "{{ services }}"
+
+  - name: Ensure packages are installed
+    pip:
+      name: "{{ packages }}"
+    with_items: "{{ pippackages }}"
+        
+
+    

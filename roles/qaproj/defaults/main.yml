@@ -1,0 +1,13 @@
+---
+# defaults file for qaproj
+  packages: 
+    - java-1.8.0-openjdk
+    - git
+    - texlive-latex
+    - wget
+    - deltarpm
+
+  services:
+    - jenkins
+    
+  

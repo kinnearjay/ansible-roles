@@ -1,0 +1,24 @@
+---
+  - hosts: localhost
+    gather_facts: true
+    become: yes
+    become_method: sudo
+    tags: [jenkins]
+
+    roles:
+      - qaproj
+      - docksible
+
+    tasks:
+      - name: update software repos
+        yum:
+          name: "*"
+          update_cache: yes
+      
+      
+      
+      
+      
+        
+
+          

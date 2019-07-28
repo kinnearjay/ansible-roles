@@ -1,0 +1,17 @@
+---
+# defaults file for docksible
+  packages:
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
+    - docker
+
+  services:
+    - docker
+
+  pipages:
+    - boto
+    - boto3
+    - docker-compose
+
+    

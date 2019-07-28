@@ -19,7 +19,7 @@
   - name: start services
     service:
       name: "{{ item }}"
-      state: running
+      state: started
     with_items: "{{ services }}"
   - name: install jenkins
     yum:

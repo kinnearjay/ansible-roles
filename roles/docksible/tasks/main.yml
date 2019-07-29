@@ -32,7 +32,7 @@
       repo: https://github.com/kinnearjay/kinnearjay.github.io.git
       dest: webstuff/kinnyweb
   - name: build docker container
-    shell: docker build . -f ansible-roles/webstuff/kinnyweb/dockerfile -t webcontainer
+    shell: docker build . -f webstuff/kinnyweb/dockerfile -t webcontainer
   - name: run the docker container
     shell: docker run -d -p 80:80 webcontainer
   

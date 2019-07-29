@@ -16,15 +16,15 @@
     yum: 
       name: "java"
       state: absent  
+  - name: install jenkins
+    yum:
+      name: "jenkins"
+      state: present
   - name: start services
     service:
       name: "{{ item }}"
       state: started
     with_items: "{{ services }}"
-  - name: install jenkins
-    yum:
-      name: "jenkins"
-      state: present
   - name: allow port 8000
     shell: iptables -I INPUT -p tcp --dport 8080 -m state --state NEW,ESTABLISHED -j ACCEPT
   - name: Wait for port 8080 to become open on the host, don't start checking for 10 seconds

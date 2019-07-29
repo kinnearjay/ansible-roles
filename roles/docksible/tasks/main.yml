@@ -31,10 +31,8 @@
     git: 
       repo: https://github.com/kinnearjay/kinnearjay.github.io.git
       dest: webstuff/kinnyweb
-  - name: move to website folder
-    shell: cd ~/ansible-roles/webstuff/kinnyweb
-  - name: run docker stuff
-    shell: docker build . -t webcontainer
+  - name: build docker container
+    shell: docker build . -f ansible-roles/webstuff/kinnyweb/dockerfile -t webcontainer
   - name: run the docker container
     shell: docker run -d -p 80:80 webcontainer
   

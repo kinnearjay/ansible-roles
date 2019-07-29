@@ -23,14 +23,15 @@
       - boto
       - boto3
       - docker-compose
-  - name: clone the website repo
-    git: 
-      repo: https://github.com/kinnearjay/kinnearjay.github.io.git
-      dest: ~/
   - name: clone the dockercompose repo
     git:
       repo: https://github.com/kinnearjay/Docker.git
-      dest: ~/
+      dest: ~/webstuff
+  - name: clone the website repo
+    git: 
+      repo: https://github.com/kinnearjay/kinnearjay.github.io.git
+      dest: ~/webstuff/kinnyweb
+  
 
 
       
